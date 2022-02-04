@@ -1,32 +1,37 @@
-const jsPsych = initJsPsych({
-    on_finish: function () {
-        sendResults(jsPsych.data)
-        jsPsych.data.displayData();
-    }
-});
-const isProduction = false;
-// how to save final result, I think:
-async function sendResults(results) {
-    if (isProduction) {
-        function handleErrors(response) {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response;
-        }
-
-        fetch("/save", {
-            method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ data: results.get().json() })
+jsPsych.init({
+    fullscreen: true,
+    on_finish: function (data) {
+        // Serialize the data
+        var promise = new Promise(function (resolve, reject) {
+            var data = jsPsych.data.dataAsJSON();
+            resolve(data);
         })
-            .then(handleErrors)
-            .then(response => console.log("Request complete! response: ", response))
-            .catch(error => console.log("We got an error: ", error));
-    } else {
-        console.log("===done===>", JSON.stringify({ data: results.get().json() }));
+
+        promise.then(function (data) {
+            sendResults(data);
+        })
     }
 
+});
+
+async function sendResults(results) {
+    function handleErrors(response) {
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response;
+    }
+
+    fetch("/save", {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ data: results })
+    })
+        .then(handleErrors)
+        .then(response => console.log("Request complete! response: ", response))
+        .catch(error =>
+            jsPsych.data.localSave('jdm_classics_results.csv', 'csv')
+        );
 }
 
 
