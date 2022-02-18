@@ -1,0 +1,14 @@
+{
+    "name": "JDM Classics",
+    "exp_id": "jdm-classics",
+    "description": "A short series of questions to test the particpants.",
+    "instructions": "Select the best option.",
+    "url": "https://github.com/JuneOh710/jdm-classics",
+    "template":"jspsych",
+    "contributors": [
+                     "Daniel J Wilson",
+                     "June Oh"
+                    ], 
+    "time":7,
+    "reference": ["https://sjdm.org/journal/19/190326c/supp.pdf"]
+}
