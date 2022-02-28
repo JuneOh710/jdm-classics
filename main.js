@@ -469,17 +469,17 @@ function renderQ5() {
         text = [
             `Imagine that you are presented with three bowls of Halloween candy. Each bowl contains both your favorite and least favorite kind of candy.
             You must draw out one piece of candy (without peeking, of course) from a bowl.
-<p class="h3">Bowl 1 to 100 pieces of candy</p>
-<p class="h3">Bowl 2 to 50 pieces of candy</p>
-<p class="h3">Bowl 3 to 10 pieces of candy</p>
+<p class="h3">Bowl 1 : 100 pieces of candy</p>
+<p class="h3">Bowl 2 : 50 pieces of candy</p>
+<p class="h3">Bowl 3 : 10 pieces of candy</p>
 
 <p class="h3">Your favorite candy has been distributed in the 3 bowls in the following way:</p>
 
-<p class="h3">Bowl 1 to 12 of your favorite candy, 88 of your least favorite candy
+<p class="h3">Bowl 1 : 12 of your favorite candy, 88 of your least favorite candy
 </p class="h3">
-<p class="h3">Bowl 2 to 6 of your favorite candy, 44 of your least favorite candy</p>
+<p class="h3">Bowl 2 : 6 of your favorite candy, 44 of your least favorite candy</p>
 
-<p class="h3">Bowl 3 to 2 of your favorite candy, 8 of your least favorite candy
+<p class="h3">Bowl 3 : 2 of your favorite candy, 8 of your least favorite candy
 </p>
             `, `If you had to choose, what bowl would you choose to draw from?`
         ]
