@@ -221,7 +221,7 @@ function validateRadio(fields) {
         } else if (checked[0] in dict) {
             return alert("Invalid response:\nyou cannot have duplicates in your ranking.");
         } else {
-            dict[checked[1]] = checked[0];
+            dict[checked[0]] = checked[1];
         }
 
 
@@ -234,7 +234,9 @@ function renderQ2() {
         return;
     }
     RESULTS['q1'] = result;
-    console.dir(RESULTS);
+    if (!IS_PRODUCTION) {
+        console.dir(RESULTS);
+    }
     let options;
     let text;
     if (RESULTS.version == 'A') {
