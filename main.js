@@ -13,7 +13,9 @@ function renderInstructions() {
      6 questions. You will see one question at a time and your job is to
             make a reasonable guess as to what the answer is.</p>
     <p class="h2">Click <b>Next</b> to end the instructions.</p>
+    <div class="d-flex flex-column align-items-center">
     <button class="btn btn-primary px-4" onclick="renderQ1();">Next</button>
+    </div>
     `;
 }
 
@@ -191,8 +193,10 @@ function renderQ1() {
 
 
 
+<div class="d-flex flex-column align-items-center">
 <button class="btn btn-primary px-4 mt-3" onclick="renderQ2();">Next</button>
-    `
+</div>
+`
 }
 function getCheckedRadio(fieldId) {
     const field = document.getElementById(fieldId);
@@ -275,7 +279,9 @@ function renderQ2() {
 </div>
         `
     }
-    html += `<button class="btn btn-primary px-4 mt-3" onclick="renderQ3();">Next</button>
+    html += `<div class="d-flex flex-column align-items-center">
+    <button class="btn btn-primary px-4 mt-3" onclick="renderQ3();">Next</button>
+    </div>
     `
     BODY.innerHTML = html;
 }
@@ -355,7 +361,9 @@ function renderQ3() {
 
     </div>
     </div>
+    <div class="d-flex flex-column align-items-center">
     <button class="btn btn-primary px-4 mt-3" onclick="renderQ4();">Next</button>
+</div>
 
     
     `
@@ -443,7 +451,9 @@ How likely is it that this student is a humanities major?
 
 
 </div>
-<button class="btn btn-primary px-4 mt-3" onclick="renderQ5();">Next</button>
+<div class="d-flex flex-column align-items-center">
+<button class="d-flex flex-column align-items-center" class="btn btn-primary px-4 mt-3" onclick="renderQ5();">Next</button>
+</div>
 
     `
 }
@@ -534,7 +544,9 @@ function renderQ5() {
 
     </div>
     </div>
-    <button class="btn btn-primary px-4 mt-3" onclick="renderQ6();">Next</button>
+    <div class="d-flex flex-column align-items-center" >
+     <button class="btn btn-primary px-4 mt-3" onclick="renderQ6();">Next</button>
+</div>
 
  
      `
@@ -623,7 +635,9 @@ function renderQ6() {
         </div>
     </div>
 </div>
-    <button class="btn btn-primary px-4 mt-3" onclick="finish();">Next</button>
+    <div class="d-flex flex-column align-items-center">
+<button class="btn btn-primary px-4 mt-3" onclick="finish();">Next</button>
+</div>
 
  
      `
