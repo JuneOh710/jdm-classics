@@ -479,17 +479,17 @@ function renderQ5() {
         text = [
             `Imagine that you are presented with three bowls of Halloween candy. Each bowl contains both your favorite and least favorite kind of candy.
             You must draw out one piece of candy (without peeking, of course) from a bowl.
-<p class="h3">Bowl 1 : 100 pieces of candy</p>
-<p class="h3">Bowl 2 : 50 pieces of candy</p>
-<p class="h3">Bowl 3 : 10 pieces of candy</p>
+<p class="h3">Bowl 1 has 100 pieces of candy</p>
+<p class="h3">Bowl 2 has 50 pieces of candy</p>
+<p class="h3">Bowl 3 has 10 pieces of candy</p>
 
 <p class="h3">Your favorite candy has been distributed in the 3 bowls in the following way:</p>
 
-<p class="h3">Bowl 1 : 12 of your favorite candy, 88 of your least favorite candy
+<p class="h3"><b>Bowl 1</b> : 12 of your favorite candy, 88 of your least favorite candy
 </p class="h3">
-<p class="h3">Bowl 2 : 6 of your favorite candy, 44 of your least favorite candy</p>
+<p class="h3"><b>Bowl 2</b> : 6 of your favorite candy, 44 of your least favorite candy</p>
 
-<p class="h3">Bowl 3 : 2 of your favorite candy, 8 of your least favorite candy
+<p class="h3"><b>Bowl 3</b> : 2 of your favorite candy, 8 of your least favorite candy
 </p>
             `, `If you had to choose, what bowl would you choose to draw from?`
         ]
@@ -500,18 +500,20 @@ function renderQ5() {
     } else {
         text = [
             `
-            Imagine that you are presented with three trays of black and white marbles. The marbles are spread in a single layer in each tray. You must draw out one marble (without peeking, of course) from a tray. If you draw a black marble you win $2.
-            <p class="h3">Tray 1 to 50 marbles</p>
-            <p class="h3">Tray 2 to 25 marbles</p>
-            <p class="h3">Tray 3 to 10 marbles</p>
+            Imagine that you are presented with three trays of black and white marbles. 
+            The marbles are spread in a single layer in each tray. You must draw out one marble 
+            (without peeking, of course) from a tray. If you draw a black marble you win $2.
+            <p class="h3">Tray 1 has 50 marbles</p>
+            <p class="h3">Tray 2 has 25 marbles</p>
+            <p class="h3">Tray 3 has 10 marbles</p>
             
             <p class="h3">The black marbles have been distributed in the 3 trays in the following way:</p>
             
-            <p class="h3">Tray 1 to 4 black marbles, 46 white marbles
+            <p class="h3"><b>Tray 1</b>: 4 black marbles, 46 white marbles
             </p>
-            <p class="h3">Tray 2 to 2 black marbles, 23 white marbles</p>
+            <p class="h3"><b>Tray 2</b>: 2 black marbles, 23 white marbles</p>
             
-            <p class="h3">Tray 3 to 1 black marble, 9 white marbles
+            <p class="h3"><b>Tray 3</b>: 1 black marble, 9 white marbles
             </p>            
             `, `Recall that if you draw a black marble you win 2 dollars. If you had to choose, what tray would you choose to draw from?`
         ]
