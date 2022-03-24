@@ -381,7 +381,7 @@ function validateQ3(fieldIds) {
 
 
     }
-    console.log(dict);
+    // console.log(dict);
     return dict;
 
 }
@@ -392,7 +392,7 @@ function renderQ4() {
         return;
     }
     RESULTS['q3'] = result;
-    console.dir(RESULTS);
+    // console.dir(RESULTS);
 
     // === render q4 ===
     let text;
@@ -469,7 +469,7 @@ function renderQ5() {
         return;
     }
     RESULTS['q4'] = { 'q4': result };
-    console.dir(RESULTS);
+    // console.dir(RESULTS);
 
 
     // === render q5 ===
@@ -561,7 +561,7 @@ function renderQ6() {
         return;
     }
     RESULTS['q5'] = { "q5": result };
-    console.dir(RESULTS);
+    // console.dir(RESULTS);
 
 
     // === render q6 ===
@@ -649,21 +649,40 @@ function renderQ6() {
 // how to save final result, I think:
 async function sendResults(results) {
     if (IS_PRODUCTION) {
-        function handleErrors(response) {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response;
-        }
+        // function handleErrors(response) {
+        //     if (!response.ok) {
+        //         throw Error(response.statusText);
+        //     }
+        //     return response;
+        // }
 
-        fetch("/save", {
-            method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ data: results })
-        })
-            .then(handleErrors)
-            .then(response => console.log("Request complete! response: ", response))
-            .catch(error => console.log("We got an error: ", error));
+        // fetch("/save", {
+        //     method: "POST",
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify({ data: results })
+        // })
+        //     .then(handleErrors)
+        //     .then(response => console.log("Request complete! response: ", response))
+        //     .catch(error => console.log("We got an error: ", error));
+        $.ajax({
+            type: "POST",
+            url: '/save',
+            data: results,
+            success: function () { document.location = "/next" },
+            dataType: "application/json",
+
+            // Endpoint not running, local save
+            error: function (err) {
+
+                if (err.status == 200) {
+                    document.location = "/next";
+                } else {
+
+                    // If error, print.
+                    console.log("results===>\n", results);
+                }
+            }
+        });
     } else {
         console.log("===done===>", results);
     }
