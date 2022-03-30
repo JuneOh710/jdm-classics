@@ -649,21 +649,6 @@ function renderQ6() {
 // how to save final result, I think:
 async function sendResults(results) {
     if (IS_PRODUCTION) {
-        // function handleErrors(response) {
-        //     if (!response.ok) {
-        //         throw Error(response.statusText);
-        //     }
-        //     return response;
-        // }
-
-        // fetch("/save", {
-        //     method: "POST",
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify({ data: results })
-        // })
-        //     .then(handleErrors)
-        //     .then(response => console.log("Request complete! response: ", response))
-        //     .catch(error => console.log("We got an error: ", error));
         $.ajax({
             type: "POST",
             url: '/save',
